@@ -1,0 +1,90 @@
+:root {
+  --black: #1e272e;
+  --lemon: #ffd32a;
+}
+
+* j {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--lemon);
+  transition: background-color 1s ease-in-out;
+}
+
+.bgDark {
+  background-color: var(--black);
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  position: relative;
+  color: var(--black);
+}
+
+.box1,
+.box2 {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: var(--black);
+  transition: 1s ease-out;
+}
+
+.box1 {
+  top: -100%;
+  left: 0;
+}
+
+.box2 {
+  bottom: -100%;
+  right: 0;
+}
+
+a:hover > .box1 {
+  transform: translateY(200%);
+  background-color: var(--lemon);
+}
+
+a:hover > .box2 {
+  transform: translateY(-200%);
+  background-color: var(--lemon);
+}
+
+.msg1,
+.msg2 {
+  transition: 0.1s ease-in-out;
+  transition-delay: 0.25s;
+}
+
+.msg1 {
+  opacity: 1;
+}
+
+.msg2 {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  color: var(--lemon);
+}
+
+a:hover .msg1 {
+  opacity: 0;
+}
+
+a:hover .msg2 {
+  opacity: 1;
+}
